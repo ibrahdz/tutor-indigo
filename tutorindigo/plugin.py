@@ -111,7 +111,6 @@ RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIG
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
-RUN npm install '@edx/frontend-component-footer@git+https://github.com/ibrahdz/frontend-component-footer'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
@@ -132,7 +131,6 @@ RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIG
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
-RUN npm install '@edx/frontend-component-footer@git+https://github.com/ibrahdz/frontend-component-footer'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
@@ -143,7 +141,6 @@ COPY indigo/env.config.jsx /openedx/app/
 RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
-RUN npm install '@edx/frontend-component-footer@git+https://github.com/ibrahdz/frontend-component-footer'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
@@ -155,7 +152,6 @@ RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIG
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
-RUN npm install '@edx/frontend-component-footer@git+https://github.com/ibrahdz/frontend-component-footer'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
@@ -167,7 +163,6 @@ RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIG
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
-RUN npm install '@edx/frontend-component-footer@git+https://github.com/ibrahdz/frontend-component-footer'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
