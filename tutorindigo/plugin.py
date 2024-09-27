@@ -19,20 +19,18 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
     # Add here your new settings
     "defaults": {
         "VERSION": __version__,
-        "WELCOME_MESSAGE": "The place for all your online learning",
+        "WELCOME_MESSAGE": "La academia de tdrobotica",
         "ENABLE_DARK_THEME": False,
-        "PRIMARY_COLOR": "#15376D",  # Indigo
+        "PRIMARY_COLOR": "#E30613",  # Indigo
         # Footer links are dictionaries with a "title" and "url"
         # To remove all links, run:
         # tutor config save --set INDIGO_FOOTER_NAV_LINKS=[]
         "FOOTER_NAV_LINKS": [
-            {"title": "About Us", "url": "/about"},
-            {"title": "Blog", "url": "/blog"},
-            {"title": "Donate", "url": "/donate"},
-            {"title": "Terms of Service", "url": "/tos"},
-            {"title": "Privacy Policy", "url": "/privacy"},
-            {"title": "Help", "url": "/help"},
-            {"title": "Contact Us", "url": "/contact"},
+            {'title': 'Nosotros', 'url': 'https://tdrobotica.co/nosotros'},
+            {'title': 'Explorar', 'url': 'https://tdrobotica.co/'},
+            {'title': 'Comprar', 'url': 'https://tdrobotica.co/tienda'},
+            {'title': 'Aprender', 'url': 'https://aprender.tdrobotica.co'},
+            {'title': 'Contactanos', 'url': 'https://tdrobotica.co/#contact'}
         ],
     },
     "unique": {},
@@ -101,7 +99,6 @@ hooks.Filters.CONFIG_UNIQUE.add_items(
 )
 hooks.Filters.CONFIG_OVERRIDES.add_items(list(config["overrides"].items()))
 
-
 hooks.Filters.ENV_PATCHES.add_items(
     [
         # MFE will install header version 3.0.x and will include indigo-footer as a
@@ -112,6 +109,7 @@ hooks.Filters.ENV_PATCHES.add_items(
 RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
@@ -120,6 +118,7 @@ COPY indigo/env.config.jsx /openedx/app/
             "mfe-dockerfile-post-npm-install-authn",
             """
 RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
+RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
 """,
         ),
         # Tutor-Indigo v2.1 targets the styling updates in discussions and learner-dashboard MFE
@@ -139,6 +138,7 @@ COPY indigo/env.config.jsx /openedx/app/
             """
 RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
 
 COPY indigo/env.config.jsx /openedx/app/
 """,
