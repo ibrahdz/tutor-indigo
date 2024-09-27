@@ -92,7 +92,7 @@ from openedx.core.lib.courses import course_image_url
           <span class="register disabled">${_("Already Enrolled")}</span>
 
           %if show_courseware_link:
-            <strong>${_("Ver  urso")}</strong>
+            <strong>${_("Ver curso")}</strong>
             </a>
           %endif
 
@@ -125,7 +125,7 @@ from openedx.core.lib.courses import course_image_url
               href_class = "register"
           %>
           <a href="${reg_href}" class="${href_class}">
-            ${_("Enroll Now")}
+            ${_("Tomar curso")}
           </a>
           <div id="register_error"></div>
         %endif
@@ -140,7 +140,7 @@ from openedx.core.lib.courses import course_image_url
     <div class="details">
       % if staff_access and studio_url is not None:
         <div class="wrap-instructor-info studio-view">
-          <a class="instructor-info-action" href="${studio_url}">${_("View About Page in studio")}</a>
+          <a class="instructor-info-action" href="${studio_url}">${_("Ver página en Studio")}</a>
         </div>
       % endif
 
@@ -154,14 +154,14 @@ from openedx.core.lib.courses import course_image_url
 
     <div class="course-sidebar">
       <div class="course-summary">
-        <h2>Course Summary</h2>
+        <h2>Resumen del curso</h2>
         <%block name="course_about_important_dates">
         <ol class="important-dates">
           <li class="important-dates-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3ZM18.8201 8.99997L12.0001 12.72L5.18007 8.99997L12.0001 5.27997L18.8201 8.99997ZM12 18.72L17 15.99V12.27L12 15L7 12.27V15.99L12 18.72Z" fill="#9CA3AF"/>
               </svg>
-            <p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default}</span></li>
+            <p class="important-dates-item-title">${_("Número del curso")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default}</span></li>
           % if not course.start_date_is_still_default:
               <%
                   course_start_date = course.advertised_start or course.start
@@ -170,7 +170,7 @@ from openedx.core.lib.courses import course_image_url
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18 4H19C20.1 4 21 4.9 21 6V20C21 21.1 20.1 22 19 22H5C3.89 22 3 21.1 3 20L3.01 6C3.01 4.9 3.89 4 5 4H6V2H8V4H16V2H18V4ZM5 10V20H19V10H5ZM19 8H5V6H19V8ZM17 13H12V18H17V13Z" fill="#9CA3AF"/>
                 </svg>
-              <p class="important-dates-item-title">${_("Classes Start")}</p>
+              <p class="important-dates-item-title">${_("Inicia")}</p>
               % if isinstance(course_start_date, str):
                   <span class="important-dates-item-text start-date">${course_start_date}</span>
               % else:
@@ -192,7 +192,7 @@ from openedx.core.lib.courses import course_image_url
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18 4H19C20.1 4 21 4.9 21 6V20C21 21.1 20.1 22 19 22H5C3.89 22 3 21.1 3 20L3.01 6C3.01 4.9 3.89 4 5 4H6V2H8V4H16V2H18V4ZM5 10V20H19V10H5ZM19 8H5V6H19V8ZM17 13H12V18H17V13Z" fill="#9CA3AF"/>
                 </svg>
-                <p class="important-dates-item-title">${_("Classes End")}</p>
+                <p class="important-dates-item-title">${_("Finaliza")}</p>
                   % if isinstance(course_end_date, str):
                       <span class="important-dates-item-text final-date">${course_end_date}</span>
                   % else:
@@ -205,15 +205,15 @@ from openedx.core.lib.courses import course_image_url
             % endif
 
           % if get_course_about_section(request, course, "effort"):
-            <li class="important-dates-item"><span class="icon fa fa-pencil" aria-hidden="true"></span><p class="important-dates-item-title">${_("Estimated Effort")}</p><span class="important-dates-item-text effort">${get_course_about_section(request, course, "effort")}</span></li>
+            <li class="important-dates-item"><span class="icon fa fa-pencil" aria-hidden="true"></span><p class="important-dates-item-title">${_("Esfuerzo estimado")}</p><span class="important-dates-item-text effort">${get_course_about_section(request, course, "effort")}</span></li>
           % endif
 
-          ##<li class="important-dates-item"><span class="icon fa fa-clock-o" aria-hidden="true"></span><p class="important-dates-item-title">${_('Course Length')}</p><span class="important-dates-item-text course-length">${_('{number} weeks').format(number=15)}</span></li>
+          ##<li class="important-dates-item"><span class="icon fa fa-clock-o" aria-hidden="true"></span><p class="important-dates-item-title">${_('Duración del curso')}</p><span class="important-dates-item-text course-length">${_('{number} weeks').format(number=15)}</span></li>
 
           %if course_price and (is_cosmetic_price_enabled):
             <li class="important-dates-item">
               <span class="icon fa fa-money" aria-hidden="true"></span>
-              <p class="important-dates-item-title">${_("Price")}</p>
+              <p class="important-dates-item-title">${_("Precio")}</p>
               <span class="important-dates-item-text">${course_price}</span>
             </li>
           %endif
@@ -226,7 +226,7 @@ from openedx.core.lib.courses import course_image_url
             ## Multiple pre-requisite courses are not supported on frontend that's why we are pulling first element
             <span class="important-dates-item-text pre-requisite"><a href="${prc_target}">${pre_requisite_courses[0]['display']}</a></span>
             <p class="tip">
-            ${Text(_("You must successfully complete {link_start}{prc_display}{link_end} before you begin this course.")).format(
+            ${Text(_("Debes realizar {link_start}{prc_display}{link_end} antes de iniciar este curso.")).format(
               link_start=HTML('<a href="{}">').format(prc_target),
               link_end=HTML('</a>'),
               prc_display=pre_requisite_courses[0]['display'],
@@ -236,7 +236,7 @@ from openedx.core.lib.courses import course_image_url
           % endif
 
           % if get_course_about_section(request, course, "prerequisites"):
-            <li class="important-dates-item"><span class="icon fa fa-book" aria-hidden="true"></span><p class="important-dates-item-title">${_("Requirements")}</p><span class="important-dates-item-text prerequisites">${get_course_about_section(request, course, "prerequisites")}</span></li>
+            <li class="important-dates-item"><span class="icon fa fa-book" aria-hidden="true"></span><p class="important-dates-item-title">${_("Requerimientos")}</p><span class="important-dates-item-text prerequisites">${get_course_about_section(request, course, "prerequisites")}</span></li>
           % endif
         </ol>
         </%block>
@@ -247,7 +247,7 @@ from openedx.core.lib.courses import course_image_url
       % if get_course_about_section(request, course, "ocw_links"):
       <div class="additional-resources">
         <header>
-          <h1>${_("Additional Resources")}</h1>
+          <h1>${_("Recursos adicionales")}</h1>
       </div>
 
         <div>
