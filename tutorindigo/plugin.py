@@ -99,7 +99,6 @@ hooks.Filters.CONFIG_UNIQUE.add_items(
 )
 hooks.Filters.CONFIG_OVERRIDES.add_items(list(config["overrides"].items()))
 
-
 hooks.Filters.ENV_PATCHES.add_items(
     [
         # MFE will install header version 3.0.x and will include indigo-footer as a
@@ -107,62 +106,61 @@ hooks.Filters.ENV_PATCHES.add_items(
         (
             "mfe-dockerfile-post-npm-install-learning",
             """
-            RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
-            RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
-            RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
-            
-            COPY indigo/env.config.jsx /openedx/app/
-            """,
+RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
+RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
+RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+
+COPY indigo/env.config.jsx /openedx/app/
+""",
         ),
         (
             "mfe-dockerfile-post-npm-install-authn",
             """
-            RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
-            RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
-
-            """,
+RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
+RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
+""",
         ),
         # Tutor-Indigo v2.1 targets the styling updates in discussions and learner-dashboard MFE
         # brand-openedx is related to styling updates while others are for header and footer updates
         (
             "mfe-dockerfile-post-npm-install-discussions",
             """
-            RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
-            RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
-            RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
+RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
+RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 
-            COPY indigo/env.config.jsx /openedx/app/
-            """,
+COPY indigo/env.config.jsx /openedx/app/
+""",
         ),
         (
             "mfe-dockerfile-post-npm-install-learner-dashboard",
             """
-            RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
-            RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
-            RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
-            
-            COPY indigo/env.config.jsx /openedx/app/
-            """,
+RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
+RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+RUN npm install '@edx/brand@git+https://github.com/ibrahdz/brand-openedx'
+
+COPY indigo/env.config.jsx /openedx/app/
+""",
         ),
         (
             "mfe-dockerfile-post-npm-install-profile",
             """
-            RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
-            RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
-            RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
-            
-            COPY indigo/env.config.jsx /openedx/app/
-            """,
+RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
+RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
+RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+
+COPY indigo/env.config.jsx /openedx/app/
+""",
         ),
         (
             "mfe-dockerfile-post-npm-install-account",
             """
-            RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
-            RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
-            RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
-            
-            COPY indigo/env.config.jsx /openedx/app/
-            """,
+RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.0.0'{% if INDIGO_ENABLE_DARK_THEME %} --theme=dark{% endif %}
+RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@~3.0.0'
+RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
+
+COPY indigo/env.config.jsx /openedx/app/
+""",
         ),
     ]
 )
@@ -175,26 +173,26 @@ hooks.Filters.ENV_PATCHES.add_items(
         (
             "openedx-common-assets-settings",
             """
-            javascript_files = ['base_application', 'application', 'certificates_wv']
-            dark_theme_filepath = ['indigo/js/dark-theme.js']
-            
-            for filename in javascript_files:
-                if filename in PIPELINE['JAVASCRIPT']:
-                    PIPELINE['JAVASCRIPT'][filename]['source_filenames'] += dark_theme_filepath
-              
-            """,
+javascript_files = ['base_application', 'application', 'certificates_wv']
+dark_theme_filepath = ['indigo/js/dark-theme.js']
+
+for filename in javascript_files:
+    if filename in PIPELINE['JAVASCRIPT']:
+        PIPELINE['JAVASCRIPT'][filename]['source_filenames'] += dark_theme_filepath
+  
+""",
         ),
         # for development
         (
             "openedx-lms-development-settings",
             """
-            javascript_files = ['base_application', 'application', 'certificates_wv']
-            dark_theme_filepath = ['indigo/js/dark-theme.js']
-            
-            for filename in javascript_files:
-                if filename in PIPELINE['JAVASCRIPT']:
-                    PIPELINE['JAVASCRIPT'][filename]['source_filenames'] += dark_theme_filepath
-            """,
+javascript_files = ['base_application', 'application', 'certificates_wv']
+dark_theme_filepath = ['indigo/js/dark-theme.js']
+
+for filename in javascript_files:
+    if filename in PIPELINE['JAVASCRIPT']:
+        PIPELINE['JAVASCRIPT'][filename]['source_filenames'] += dark_theme_filepath
+""",
         ),
     ]
 )
