@@ -41,7 +41,7 @@ from openedx.core.lib.courses import course_image_url
         location.replace("${reverse('signin_user') | n, js_escaped_string}?next=" + encodeURIComponent("${request.path | n, js_escaped_string}"));
       } else {
         $('#register_error').text(
-            (xhr.responseText ? xhr.responseText : "${_("An error occurred. Please try again later.") | n, js_escaped_string}")
+            (xhr.responseText ? xhr.responseText : "${_("Ocurrió un error. Por favor intenta de nuevo más tarde.") | n, js_escaped_string}")
         ).css("display", "block");
       }
     });
@@ -92,13 +92,13 @@ from openedx.core.lib.courses import course_image_url
           <span class="register disabled">${_("Already Enrolled")}</span>
 
           %if show_courseware_link:
-            <strong>${_("View Course")}</strong>
+            <strong>${_("Ver  urso")}</strong>
             </a>
           %endif
 
         % elif is_course_full:
           <span class="register disabled">
-            ${_("Course is full")}
+            ${_("Curso lleno")}
           </span>
         % elif invitation_only and not can_enroll:
           <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
@@ -110,7 +110,7 @@ from openedx.core.lib.courses import course_image_url
         %elif allow_anonymous:
           %if show_courseware_link:
             <a href="${course_target}">
-            <strong>${_("View Course")}</strong>
+            <strong>${_("Ver curso")}</strong>
             </a>
           %endif
         %else:
