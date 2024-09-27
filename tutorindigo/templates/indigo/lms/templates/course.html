@@ -19,7 +19,7 @@ from django.urls import reverse
         <span class="course-organization">${course.display_org_with_default}</span>
       </h2>
       <!-- NEW IN INDIGO Learn more button is displayed under the course image instead of the hover functionality. -->
-      <a  href="${reverse('about_course', args=[str(course.id)])}" class="learn-more" aria-hidden="true">${_("Learn More")}</a>
+      <a  href="${reverse('about_course', args=[str(course.id)])}" class="learn-more" aria-hidden="true">${_("Más información")}</a>
       <%
       if course.start is not None:
           course_date_string = course.start.strftime('%Y-%m-%dT%H:%M:%S%z')
