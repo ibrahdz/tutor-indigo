@@ -40,7 +40,7 @@ const config = {
             id: 'custom_footer',
             type: DIRECT_PLUGIN,
             RenderWidget: () => (
-              <h1 style={{textAlign: 'center'}}>Esta es una prueba de footer persoanlizado</h1>
+              <h1>Esta es una prueba de footer persoanlizado</h1>
             ),
           },
         },
