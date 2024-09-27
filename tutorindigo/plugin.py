@@ -21,7 +21,7 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
         "VERSION": __version__,
         "WELCOME_MESSAGE": "La academia de tdrobotica",
         "ENABLE_DARK_THEME": False,
-        "PRIMARY_COLOR": "#F30613",  # Indigo
+        "PRIMARY_COLOR": "#E30613",  # Indigo
         # Footer links are dictionaries with a "title" and "url"
         # To remove all links, run:
         # tutor config save --set INDIGO_FOOTER_NAV_LINKS=[]
