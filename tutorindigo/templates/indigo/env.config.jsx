@@ -24,15 +24,10 @@ const config = {
                 <div class="footer-top">
                   <div class="powered-area">
                     <ul class="logo-list">
-                      <li>Por:</li>
-                      <li>
-                        <a href="https://www.tdrobotica.co" rel="noopener" target="_blank">
-                          <img src="${static.url('https://academia.tdrobotica.co/theming/asset/images/tutor-logo.png')}" alt="Por tdrobotica" width="79" />
-                        </a>
-                      </li>
+                      <li>Por:</li>                      
                     </ul>
                   </div>
-                  <nav class="nav-colophon" aria-label="${_('About')}">
+                  <nav class="nav-colophon">
                     <ol>
                       <li>
                         <a href="https://tdrobotica.co/nosotros">Nosotros</a>
@@ -52,7 +47,7 @@ const config = {
                     </ol>
                   </nav>
                 </div>
-                <span class="copyright-site">Copyrights ©${datetime.now().year}. Todos los derechos reservados.</span>                
+                <span class="copyright-site">Copyrights 2024. Todos los derechos reservados.</span>                
                 </footer>
               </div>            
             ),
