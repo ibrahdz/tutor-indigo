@@ -34,12 +34,22 @@ const config = {
                   </div>
                   <nav class="nav-colophon" aria-label="${_('About')}">
                     <ol>
-                      {% for link in INDIGO_FOOTER_NAV_LINKS %}
                       <li>
-                        <a href="{{ link['url'] }}">{{ link['title'] }}</a>
-                      </li>
-                      {% endfor %}
-                  </ol>
+                        <a href="https://tdrobotica.co/nosotros">Nosotros</a>
+                      </li>                        
+                      <li>
+                        <a href="https://tdrobotica.co/">Explorar</a>
+                      </li>                        
+                      <li>
+                        <a href="https://tdrobotica.co/tienda">Comprar</a>
+                      </li>                        
+                      <li>
+                        <a href="https://aprender.tdrobotica.co">Aprender</a>
+                      </li>                        
+                      <li>
+                        <a href="https://tdrobotica.co/#contact">Contactanos</a>
+                      </li>                        
+                    </ol>
                 </nav>
                 </div>
                 <span class="copyright-site">Copyrights ©${datetime.now().year}. Todos los derechos reservados.</span>                
