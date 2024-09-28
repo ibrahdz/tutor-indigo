@@ -32,6 +32,15 @@ const config = {
                       </li>
                     </ul>
                   </div>
+                  <nav class="nav-colophon" aria-label="${_('About')}">
+                    <ol>
+                      {% for link in INDIGO_FOOTER_NAV_LINKS %}
+                      <li>
+                        <a href="{{ link['url'] }}">{{ link['title'] }}</a>
+                      </li>
+                      {% endfor %}
+                  </ol>
+                </nav>
                 </div>
                 <span class="copyright-site">Copyrights ©${datetime.now().year}. Todos los derechos reservados.</span>                
                 </footer>
