@@ -27,7 +27,7 @@ const config = {
                       <li>Por:</li>
                       <li>
                         <a href="https://www.tdrobotica.co" rel="noopener" target="_blank">
-                          <img src="${static.url('images/logo.png')}" alt="Por tdrobotica" width="79" />
+                          <img src="${static.url('https://academia.tdrobotica.co/theming/asset/images/tutor-logo.png')}" alt="Por tdrobotica" width="79" />
                         </a>
                       </li>
                     </ul>
@@ -50,7 +50,7 @@ const config = {
                         <a href="https://tdrobotica.co/#contact">Contactanos</a>
                       </li>                        
                     </ol>
-                </nav>
+                  </nav>
                 </div>
                 <span class="copyright-site">Copyrights ©${datetime.now().year}. Todos los derechos reservados.</span>                
                 </footer>
