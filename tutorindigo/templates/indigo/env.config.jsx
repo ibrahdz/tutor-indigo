@@ -24,7 +24,12 @@ const config = {
                 <div class="footer-top">
                   <div class="powered-area">
                     <ul class="logo-list">
-                      <li>Por:</li>                      
+                      <li>Por:</li>
+                      <li>
+                        <a href="https://www.tdrobotica.co" rel="noopener" target="_blank">
+                          <img src="${static.url('https://academia.tdrobotica.co/theming/asset/images/tutor-logo.png')}" alt="Por tdrobotica" width="79" />
+                        </a>
+                      </li>
                     </ul>
                   </div>
                   <nav class="nav-colophon">
